@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Image, Form, Button, Icon } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 
 export default function Banner() {
 	return (
@@ -11,7 +10,7 @@ export default function Banner() {
 				backgroundPosition: 'center',
 				backgroundSize: 'cover',
 				width: '100%',
-				minHeight: '600px',
+				minHeight: '650px',
 				padding: '0px',
 			}}
 		>
@@ -31,12 +30,13 @@ export default function Banner() {
 							fontSize: '2.5em',
 							fontFamily: 'sans-serif',
               display: 'inline',
+              color: 'white'
 						}}
 					>
 						Directory
 					</h2>
 				</div>
-				<hr style={{ width: '300px' }}></hr>
+				<hr style={{ width: '300px', border: '0.05rem solid #cfd1d1' }}></hr>
 
 				<h3
 					style={{
@@ -51,11 +51,11 @@ export default function Banner() {
 				>
 					Find your favorite Characters, Films, Species, Starships and Planets
 				</h3>
-				<div class='ui icon input' style={{ width: '50rem', height: '4rem' }}>
-					<input class='prompt' type='text' placeholder='Enter a search term' />
-					<i class='search icon'></i>
+				<div className='ui icon input' style={{ width: '50rem', height: '4rem', position: 'relative' }}>
+					<i style={{position: 'absolute'}} className='search icon'></i>
+					<input className='prompt' type='text' placeholder='Enter a search term' />
 				</div>
-				<div class='results'></div>
+				<div className='results'></div>
 			</div>
 		</div>
 	);
