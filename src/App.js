@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 
+import Banner from './components/Banner';
+
 function App() {
 	return (
 		<div>
-			<h1>StarWars</h1>
+			<Banner></Banner>
 		</div>
 	);
 }
