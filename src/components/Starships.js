@@ -15,7 +15,7 @@ export default function Starships() {
 						<Card.Content>
 							<Card.Header>Daniel</Card.Header>
 							<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-							<button class='ui button' style={{ borderRadius: '0', float: 'right' }}>
+							<button className='ui button' style={{ borderRadius: '0', float: 'right' }}>
 								Read More
 								<Icon name='arrow right' />
 							</button>
@@ -28,7 +28,7 @@ export default function Starships() {
 						<Card.Content>
 							<Card.Header>Daniel</Card.Header>
 							<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-							<button class='ui button' style={{ borderRadius: '0', float: 'right' }}>
+							<button className='ui button' style={{ borderRadius: '0', float: 'right' }}>
 								Read More
 								<Icon name='arrow right' />
 							</button>
@@ -41,7 +41,7 @@ export default function Starships() {
 						<Card.Content>
 							<Card.Header>Daniel</Card.Header>
 							<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-							<button class='ui button' style={{ borderRadius: '0', float: 'right' }}>
+							<button className='ui button' style={{ borderRadius: '0', float: 'right' }}>
 								Read More
 								<Icon name='arrow right' />
 							</button>
@@ -54,7 +54,7 @@ export default function Starships() {
 						<Card.Content>
 							<Card.Header>Daniel</Card.Header>
 							<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-							<button class='ui button' style={{ borderRadius: '0', float: 'right' }}>
+							<button className='ui button' style={{ borderRadius: '0', float: 'right' }}>
 								Read More
 								<Icon name='arrow right' />
 							</button>
@@ -67,7 +67,7 @@ export default function Starships() {
 						<Card.Content>
 							<Card.Header>Daniel</Card.Header>
 							<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-							<button class='ui button' style={{ borderRadius: '0', float: 'right' }}>
+							<button className='ui button' style={{ borderRadius: '0', float: 'right' }}>
 								Read More
 								<Icon name='arrow right' />
 							</button>
@@ -80,7 +80,7 @@ export default function Starships() {
 						<Card.Content>
 							<Card.Header>Daniel</Card.Header>
 							<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-							<button class='ui button' style={{ borderRadius: '0', float: 'right' }}>
+							<button className='ui button' style={{ borderRadius: '0', float: 'right' }}>
 								Read More
 								<Icon name='arrow right' />
 							</button>
