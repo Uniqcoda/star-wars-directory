@@ -1,20 +1,27 @@
 import React from 'react';
-import { Image, Grid } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import { Divider } from "semantic-ui-react";
+
+
+import CustomDotGroup from './CustomDotGroup';
 
 export default function Planets() {
 	return (
-		<div style={{ padding: '0em 8em', fontFamily: 'sans-serif', textAlign: 'center' }}  className='ui center aligned'>
-			<div style={{margin: '3rem'}}>
+		<div style={{ padding: '0em 8em', fontFamily: 'sans-serif', textAlign: 'center' }} className='ui center aligned'>
+			<div style={{ margin: '3rem' }}>
 				<h2>Popular Planets</h2>
 				<hr style={{ width: '6rem', border: '0.2rem solid #393838' }}></hr>
 			</div>
-			<Grid stackable columns={3}>
-				<Grid.Row>
-					<Grid.Column
-						style={{
-							marginBottom: '20px',
-						}}
-					>
+			<CarouselProvider visibleSlides={3} naturalSlideWidth={1} naturalSlideHeight={1} totalSlides={6}>
+				<Slider
+					stackable
+					style={{
+						marginBottom: '20px',
+					}}
+				>
+					<Slide tag='a' index={0}>
 						<Image
 							alt='planet'
 							style={{ height: '28rem', marginRight: '5rem', width: '24rem' }}
@@ -34,13 +41,13 @@ export default function Planets() {
 						>
 							Corelia
 						</p>
-					</Grid.Column>
-					<Grid.Column
-						style={{
-							marginBottom: '20px',
-						}}
-					>
-						<Image alt='planet' style={{ height: '28rem', marginRight: '5rem', width: '24rem' }} src='/assets/planet-2.jpg' />
+					</Slide>
+					<Slide tag='a' index={1}>
+						<Image
+							alt='planet'
+							style={{ height: '28rem', marginRight: '5rem', width: '24rem' }}
+							src='/assets/planet-2.jpg'
+						/>
 						<p
 							style={{
 								fontSize: '2em',
@@ -55,12 +62,8 @@ export default function Planets() {
 						>
 							Ord Mantell
 						</p>
-					</Grid.Column>
-					<Grid.Column
-						style={{
-							marginBottom: '20px',
-						}}
-					>
+					</Slide>
+					<Slide tag='a' index={2}>
 						<Image alt='planet' style={{ height: '28rem', width: '24rem' }} src='/assets/planet-3.jpg' />
 						<p
 							style={{
@@ -76,9 +79,11 @@ export default function Planets() {
 						>
 							Endor
 						</p>
-					</Grid.Column>
-				</Grid.Row>
-			</Grid>
+					</Slide>
+				</Slider>
+				<Divider hidden></Divider>
+				<CustomDotGroup slides={3} />
+			</CarouselProvider>
 		</div>
 	);
 }
