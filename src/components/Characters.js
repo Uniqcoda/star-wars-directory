@@ -1,29 +1,86 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Image, Grid, Button } from 'semantic-ui-react';
 
 export default function Characters() {
 	return (
-		<div style={{ padding: '0em 6.5em', fontFamily: 'sans-serif' }} className='ui center aligned'>
+		<div className='ui center aligned sections'>
 			<div style={{ margin: '3rem', textAlign: 'center' }}>
 				<h2>Popular Characters</h2>
-				<hr style={{ width: '6rem', border: '0.2rem solid #393838' }}></hr>
+				<hr className='sections-hr'></hr>
 			</div>
 			<Grid stackable>
 				<Grid.Column width={8}>
-					<Image alt='character' style={{ height: '25rem', width: '24rem' }} src='/assets/character-1.jpg' />
+					<Grid>
+						<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
+							<Image className='character-image' alt='character' src='/assets/character-1.jpg' />
+						</Grid.Column>
+						<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
+							<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>Luke Skywalker</h3>
+							<p style={{ marginTop: '0', fontSize: '12px', marginBottom: '2rem' }}>
+								<em>Son of Anakin</em>
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Praesent element...{' '}
+								<Link style={{ textDecoration: 'underline', fontWeight: '700', color: '#504e4e' }}>Read More</Link>
+							</p>
+						</Grid.Column>
+					</Grid>
 				</Grid.Column>
 				<Grid.Column width={8}>
-					<Image alt='character' style={{ height: '25rem', width: '24rem' }} src='/assets/character-2.jpg' />
+					<Grid>
+						<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
+							<Image className='character-image' alt='character' src='/assets/character-2.jpg' />
+						</Grid.Column>
+						<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
+							<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>Luke Skywalker</h3>
+							<p style={{ marginTop: '0', fontSize: '12px', marginBottom: '2rem' }}>
+								<em>Son of Anakin</em>
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Praesent element...{' '}
+								<Link style={{ textDecoration: 'underline', fontWeight: '700', color: '#504e4e' }}>Read More</Link>
+							</p>
+						</Grid.Column>
+					</Grid>
 				</Grid.Column>
 				<Grid.Column width={8}>
-					<Image
-						alt='character'
-						style={{ height: '25rem', width: '24rem', position: 'center' }}
-						src='/assets/character-3.jpg'
-					/>
+					<Grid>
+						<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
+							<Image className='character-image' alt='character' src='/assets/character-3.jpg' />
+						</Grid.Column>
+						<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
+							<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>Luke Skywalker</h3>
+							<p style={{ marginTop: '0', fontSize: '12px', marginBottom: '2rem' }}>
+								<em>Son of Anakin</em>
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Praesent element...{' '}
+								<Link style={{ textDecoration: 'underline', fontWeight: '700', color: '#504e4e' }}>Read More</Link>
+							</p>
+						</Grid.Column>
+					</Grid>
 				</Grid.Column>
 				<Grid.Column width={8}>
-					<Image alt='character' style={{ height: '25rem', width: '24rem' }} src='/assets/character-4.jpg' />
+					<Grid>
+						<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
+							<Image className='character-image' alt='character' src='/assets/character-4.jpg' />
+						</Grid.Column>
+						<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
+							<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>Luke Skywalker</h3>
+							<p style={{ marginTop: '0', fontSize: '12px', marginBottom: '2rem' }}>
+								<em>Son of Anakin</em>
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Praesent element...{' '}
+								<Link style={{ textDecoration: 'underline', fontWeight: '700', color: '#504e4e' }}>Read More</Link>
+							</p>
+						</Grid.Column>
+					</Grid>
 				</Grid.Column>
 			</Grid>
 			<Button

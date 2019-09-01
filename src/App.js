@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 import Banner from './components/Banner';
 import Starships from './components/Starships';
@@ -8,12 +10,18 @@ import Characters from './components/Characters';
 
 function App() {
 	return (
-		<div>
+		<Router>
 			<Banner></Banner>
-			<Starships></Starships>
-			<Planets></Planets>
-			<Characters></Characters>
-		</div>
+			<section>
+				<Starships></Starships>
+			</section>
+			<section>
+				<Planets></Planets>
+			</section>
+			<section>
+				<Characters></Characters>
+			</section>
+		</Router>
 	);
 }
 
