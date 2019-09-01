@@ -25,34 +25,34 @@ export default function Banner() {
 			<div className='ui text container center aligned' style={{ marginTop: '6em' }}>
 				<div>
 					<Image src='/assets/logo.png' style={{ width: '110px', marginRight: '15px', display: 'inline' }} />
-					<h2
+					<h1
 						style={{
 							fontSize: '2.5em',
 							fontFamily: 'sans-serif',
-              display: 'inline',
-              color: 'white'
+							display: 'inline',
+							color: 'white',
 						}}
 					>
 						Directory
-					</h2>
+					</h1>
 				</div>
-				<hr style={{ width: '300px', border: '0.05rem solid #cfd1d1' }}></hr>
+				<hr style={{ width: '22rem', border: '0.05rem solid #cfd1d1' }}></hr>
 
-				<h3
+				<h3 className='ui inverted header'
 					style={{
 						fontSize: '1.3em',
 						fontFamily: 'sans-serif',
 						fontWeight: 'normal',
-						width: '35rem',
-						marginLeft: '100px',
 						wordSpacing: '2px',
 						color: '#cfd1d1',
 					}}
 				>
 					Find your favorite Characters, Films, Species, Starships and Planets
 				</h3>
-				<div className='ui icon input' style={{ width: '50rem', height: '4rem', position: 'relative' }}>
-					<i style={{position: 'absolute'}} className='search icon'></i>
+				<div className='ui icon input'
+				 style={{ width: '100%', height: '4rem' }}
+				 >
+					<i className='search icon'></i>
 					<input className='prompt' type='text' placeholder='Enter a search term' />
 				</div>
 				<div className='results'></div>

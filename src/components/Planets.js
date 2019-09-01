@@ -3,7 +3,7 @@ import { Image, Grid } from 'semantic-ui-react';
 
 export default function Planets() {
 	return (
-		<div style={{ padding: '0em 8em' }}  className='ui vertical center aligned segment'>
+		<div style={{ padding: '0em 8em', fontFamily: 'sans-serif', textAlign: 'center' }}  className='ui center aligned'>
 			<div style={{margin: '3rem'}}>
 				<h2>Popular Planets</h2>
 				<hr style={{ width: '6rem', border: '0.2rem solid #393838' }}></hr>
