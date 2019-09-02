@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Icon, Image, Grid, Button } from 'semantic-ui-react';
 import axios from 'axios';
 
@@ -23,6 +24,12 @@ export default function Starships() {
 		}
 	}, []);
 
+	function getID(url) {
+		let path = url.split('/');
+		let id = path[path.length - 2];
+		return `starships/${id}`;
+	}
+
 	return (
 		<div className='ui center aligned sections'>
 			<div style={{ margin: '3rem', textAlign: 'center' }}>
@@ -43,14 +50,18 @@ export default function Starships() {
 										<Card.Content>
 											<Card.Header>{starship.name}</Card.Header>
 											<Card.Description>
-												<p>Model: <strong>{starship.model}</strong></p>
+												<p>
+													Model: <strong>{starship.model}</strong>
+												</p>
 												{/* <p>Manufacturer: <strong>{starship.manufacturer}</strong></p> */}
-												<p>Cargo Capacity: <strong>{starship.cargo_capacity}</strong></p>
+												<p>
+													Cargo Capacity: <strong>{starship.cargo_capacity}</strong>
+												</p>
 											</Card.Description>
-											<button className='ui button starship-button'>
+											<Link to={getID(starship.url)} className='ui button starship-button'>
 												Read More
 												<Icon name='arrow right' />
-											</button>
+											</Link>
 										</Card.Content>
 									</Card>
 								</Grid.Column>
