@@ -53,7 +53,6 @@ export default function Starships() {
 												<p>
 													Model: <strong>{starship.model}</strong>
 												</p>
-												{/* <p>Manufacturer: <strong>{starship.manufacturer}</strong></p> */}
 												<p>
 													Cargo Capacity: <strong>{starship.cargo_capacity}</strong>
 												</p>
