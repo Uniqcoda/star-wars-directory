@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 
+import Search from './Search'
+
 export default function Banner() {
 	return (
 		<div
@@ -49,13 +51,7 @@ export default function Banner() {
 				>
 					Find your favorite Characters, Films, Species, Starships and Planets
 				</h3>
-				<div className='ui icon input'
-				 style={{ width: '100%', height: '4rem' }}
-				 >
-					<i className='search icon'></i>
-					<input className='prompt' type='text' placeholder='Enter a search term' />
-				</div>
-				<div className='results'></div>
+<Search></Search>
 			</div>
 		</div>
 	);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Icon, Image, Grid, Button } from 'semantic-ui-react';
+import { Card, Icon, Image, Grid, Button, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 
 export default function Starships() {
@@ -40,7 +40,7 @@ export default function Starships() {
 				{starships
 					? starships.map((starship, index) => {
 							return (
-								<Grid.Column key={index} className='starship-column'>
+								<Grid.Column key={index}>
 									<Card centered fluid>
 										<Image
 											alt='starship'
@@ -68,6 +68,7 @@ export default function Starships() {
 					  })
 					: null}
 			</Grid>
+			<Divider hidden></Divider>
 			<Button
 				style={{ width: '50%', height: '3rem', display: 'block', margin: '3rem auto', border: '0.05rem solid black' }}
 				basic
