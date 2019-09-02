@@ -3,7 +3,6 @@ import Banner from './components/Banner';
 import Starships from './components/Starships';
 import Planets from './components/Planets';
 import Characters from './components/Characters';
-import Footer from './components/Footer';
 
 export default function Home() {
 	return (
