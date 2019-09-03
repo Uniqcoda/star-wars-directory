@@ -14,6 +14,12 @@ export default function Starships() {
 		'/assets/starship-6.jpg',
 	];
 
+	const [noOfCards, setNoOfCards] = useState(6);
+
+	function viewMore() {
+		setNoOfCards(10)
+	}
+
 	useEffect(() => {
 		try {
 			axios.get('https://swapi.co/api/starships/').then(res => {
@@ -39,37 +45,40 @@ export default function Starships() {
 			<Grid stackable columns={3}>
 				{starships
 					? starships.map((starship, index) => {
-							return (
-								<Grid.Column key={index}>
-									<Card centered fluid>
-										<Image
-											alt='starship'
-											style={{ height: '16.5rem' }}
-											src={index > 5 ? images[index % 6] : images[index]}
-										/>
-										<Card.Content>
-											<Card.Header>{starship.name}</Card.Header>
-											<Card.Description>
-												<p>
-													Model: <strong>{starship.model}</strong>
-												</p>
-												<p>
-													Cargo Capacity: <strong>{starship.cargo_capacity}</strong>
-												</p>
-											</Card.Description>
-											<Link to={getID(starship.url)} className='ui button starship-button'>
-												Read More
-												<Icon name='arrow right' />
-											</Link>
-										</Card.Content>
-									</Card>
-								</Grid.Column>
-							);
+							if (index < noOfCards) {
+								return (
+									<Grid.Column key={index}>
+										<Card centered fluid>
+											<Image
+												alt='starship'
+												style={{ height: '16.5rem' }}
+												src={index > 5 ? images[index % 6] : images[index]}
+											/>
+											<Card.Content>
+												<Card.Header>{starship.name}</Card.Header>
+												<Card.Description>
+													<p>
+														Model: <strong>{starship.model}</strong>
+													</p>
+													<p>
+														Cargo Capacity: <strong>{starship.cargo_capacity}</strong>
+													</p>
+												</Card.Description>
+												<Link to={getID(starship.url)} className='ui button starship-button'>
+													Read More
+													<Icon name='arrow right' />
+												</Link>
+											</Card.Content>
+										</Card>
+									</Grid.Column>
+								);
+							}
+							return null;
 					  })
 					: null}
 			</Grid>
 			<Divider hidden></Divider>
-			<Button
+			<Button onClick={viewMore} 
 				style={{ width: '50%', height: '3rem', display: 'block', margin: '3rem auto', border: '0.05rem solid black' }}
 				basic
 				color='black'
