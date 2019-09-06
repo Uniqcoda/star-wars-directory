@@ -6,10 +6,11 @@ import Characters from '../home/components/Characters';
 
 export default function CharactersPage() {
 	const [count, setCount] = useState();
+	const categories = ['people'];
 
 	return (
 		<div>
-			<Banner category={'people'}></Banner>
+			<Banner categories={categories}></Banner>
 			<Characters noOfCards={10} setCount={setCount}></Characters>
 			<Container textAlign='center'>
 				1 to 10 of {count}

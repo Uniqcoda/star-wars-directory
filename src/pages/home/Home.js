@@ -6,10 +6,11 @@ import Characters from './components/Characters';
 
 export default function Home() {
 	const [count, setCount] = useState();
+	const categories = ['people', 'starships', 'planets']
 
 	return (
 		<div>
-			<Banner></Banner>
+			<Banner categories={categories}></Banner>
 			<section>
 				<Starships noOfCards={6} setCount={setCount} viewMore={true}></Starships>
 			</section>

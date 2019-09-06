@@ -33,7 +33,7 @@ function Starships({ history, noOfCards, setCount, viewMore }) {
 	}
 
 	function redirect() {
-		history.push('/starship');
+		history.push('/starships');
 	}
 
 	return (

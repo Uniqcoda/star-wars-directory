@@ -18,14 +18,6 @@
   height: 350px
 }
 
-.select-category {
-  width: 10%;
-  background-color: white;
-  color: #504e4e;
-  border-radius: 3px;
-  padding: 5px;
-}
-
 .search-field {
   width: 100%;
   height: 4rem

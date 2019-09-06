@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 
-import Search from './Search'
+import Search from './Search';
 
-export default function Banner({category}) {
+export default function Banner({ categories }) {
 	return (
 		<div
 			className='ui inverted vertical aligned segment'
@@ -40,7 +40,8 @@ export default function Banner({category}) {
 				</div>
 				<hr style={{ width: '22rem', border: '0.05rem solid #cfd1d1' }}></hr>
 
-				<h3 className='ui inverted header'
+				<h3
+					className='ui inverted header'
 					style={{
 						fontSize: '1.3em',
 						fontFamily: 'sans-serif',
@@ -51,7 +52,7 @@ export default function Banner({category}) {
 				>
 					Find your favorite Characters, Films, Species, Starships and Planets
 				</h3>
-<Search category={category}></Search>
+				<Search categories={categories}></Search>
 			</div>
 		</div>
 	);

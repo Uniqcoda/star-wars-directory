@@ -7,7 +7,7 @@ import Home from './pages/home/Home';
 import Starship from './pages/starship/Starship';
 import Character from './pages/character/Character';
 import StarshipsPage from './pages/starships/StarshipsPage';
-import CharactersPage from './pages/starships/CharactersPage';
+import CharactersPage from './pages/characters/CharactersPage';
 
 function App() {
 	return (

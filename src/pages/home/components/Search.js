@@ -4,20 +4,9 @@ import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
-export default function Search({category}) {
-	// const selectCategory = [
-	// 	{ key: 'pe', text: 'People', value: 'People' },
-	// 	{ key: 'pl', text: 'Planets', value: 'Planets' },
-	// 	{ key: 'st', text: 'Starships', value: 'Starships' },
-	// ];
-
-	// const [category, setCategory] = useState('people');
+export default function Search({ categories }) {
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState([]);
-
-	// const newCategory = event => {
-	// 	setCategory(event.target.innerText.toLowerCase());
-	// };
 
 	const newQuery = e => {
 		setQuery(e.target.value);
@@ -26,39 +15,32 @@ export default function Search({category}) {
 	function getID(url) {
 		let path = url.split('/');
 		let id = path[path.length - 2];
-		return `${category}/${id}`;
+		let category = path[path.length - 3];
+		return { url: `${category}/${id}`, category };
 	}
 
 	function search(e) {
-		axios
-			.get(`https://swapi.co/api/${category}/?search=${query}`)
-			.then(res => {
-        let response = res.data.results
-        if (response.length < 1) {
-          return 'no result found'
-        }
-        setResults(response);
-        console.log(res);
-        setQuery('')
-			})
-			.catch(err => console.log(err)
-      );
+		categories.forEach(category => {
+			axios
+				.get(`https://swapi.co/api/${category}/?search=${query}`)
+				.then(res => {
+					let response = res.data.results;
+					if (response.length < 1) {
+						return 'no result found';
+					}
+					setResults(response);
+					console.log(res);
+					setQuery('');
+				})
+				.catch(err => console.log(err));
+		});
 	}
 
 	return (
 		<div className='search-field'>
 			<Form>
 				<Form.Group>
-					{/* <Dropdown
-						name='category'
-						className='select-category'
-						simple
-						item
-						options={selectCategory}
-						defaultValue='People'
-						onChange={newCategory}
-					/> */}
-					<div className='ui icon input' style={{ width: '100%' }}> {/* if you add the category dropdown, change this width to 90% */}
+					<div className='ui icon input' style={{ width: '100%' }}>
 						<i className='search icon'></i>
 						<input
 							name='query'
@@ -79,7 +61,10 @@ export default function Search({category}) {
 				{results
 					? results.map((result, index) => (
 							<li key={index}>
-								<Link to={getID(result.url)}>{result.name}</Link>
+								<Link to={getID(result.url).url}>
+									<span style={{ color: 'black' }}>Name:</span> <em>{result.name}</em>,{' '}
+									<span style={{ color: 'black' }}>Category:</span> <em>{getID(result.url).category}</em>
+								</Link>
 							</li>
 					  ))
 					: null}

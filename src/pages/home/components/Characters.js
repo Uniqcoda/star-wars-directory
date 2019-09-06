@@ -36,7 +36,7 @@ import axios from 'axios';
 	}
 
 	function redirect() {
-		history.push('/character');
+		history.push('/characters');
 	}
 
 	return (
@@ -63,8 +63,7 @@ import axios from 'axios';
 													</em>
 												</p>
 												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-													labore et dolore magna aliqua. Praesent element...
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...
 													<Link
 														to={getID(person.url)}
 														style={{ textDecoration: 'underline', fontWeight: '700', color: '#504e4e' }}
