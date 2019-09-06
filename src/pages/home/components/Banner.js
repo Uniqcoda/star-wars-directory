@@ -3,7 +3,7 @@ import { Image } from 'semantic-ui-react';
 
 import Search from './Search'
 
-export default function Banner() {
+export default function Banner({category}) {
 	return (
 		<div
 			className='ui inverted vertical aligned segment'
@@ -51,7 +51,7 @@ export default function Banner() {
 				>
 					Find your favorite Characters, Films, Species, Starships and Planets
 				</h3>
-<Search></Search>
+<Search category={category}></Search>
 			</div>
 		</div>
 	);
