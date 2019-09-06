@@ -36,7 +36,7 @@ import axios from 'axios';
 	}
 
 	function redirect() {
-		history.push('/characters');
+		history.push('/character');
 	}
 
 	return (

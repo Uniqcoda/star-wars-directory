@@ -29,11 +29,11 @@ function Starships({ history, noOfCards, setCount, viewMore }) {
 	function getID(url) {
 		let path = url.split('/');
 		let id = path[path.length - 2];
-		return `starships/${id}`;
+		return `starship/${id}`;
 	}
 
 	function redirect() {
-		history.push('/starships');
+		history.push('/starship');
 	}
 
 	return (
