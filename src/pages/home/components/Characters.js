@@ -25,7 +25,7 @@ import axios from 'axios';
 				setNextUrl(res.data.next);
 			});
 		} catch (err) {
-			console.log(err);
+			return err;
 		}
 	}, [setCount, url]);
 

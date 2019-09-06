@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, Form } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
@@ -15,7 +15,8 @@ export default function Search({ categories }) {
 	function getID(url) {
 		let path = url.split('/');
 		let id = path[path.length - 2];
-		let category = path[path.length - 3];
+		let str = path[path.length - 3];
+		let category = str.substring(0, str.length - 1);
 		return { url: `${category}/${id}`, category };
 	}
 
@@ -29,10 +30,9 @@ export default function Search({ categories }) {
 						return 'no result found';
 					}
 					setResults(response);
-					console.log(res);
 					setQuery('');
 				})
-				.catch(err => console.log(err));
+				.catch(err => err);
 		});
 	}
 
@@ -62,7 +62,7 @@ export default function Search({ categories }) {
 					? results.map((result, index) => (
 							<li key={index}>
 								<Link to={getID(result.url).url}>
-									<span style={{ color: 'black' }}>Name:</span> <em>{result.name}</em>,{' '}
+									<span style={{ color: 'black' }}>Name:</span> <em>{result.name}</em>,
 									<span style={{ color: 'black' }}>Category:</span> <em>{getID(result.url).category}</em>
 								</Link>
 							</li>

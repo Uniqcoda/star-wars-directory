@@ -22,7 +22,7 @@ function Starships({ history, noOfCards, setCount, viewMore }) {
 				setCount(res.data.count);
 			});
 		} catch (err) {
-			console.log(err);
+			return err;
 		}
 	}, [setCount]);
 

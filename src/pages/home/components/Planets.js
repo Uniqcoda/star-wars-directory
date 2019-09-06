@@ -53,7 +53,7 @@ export default function Planets() {
 				setplanets(res.data.results);
 			});
 		} catch (err) {
-			console.log(err);
+			return err;
 		}
 	}, []);
 
