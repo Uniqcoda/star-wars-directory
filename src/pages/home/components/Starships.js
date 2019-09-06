@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Card, Icon, Image, Grid, Button, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 
-export default function Starships() {
+function Starships({ history, noOfCards, setCount, viewMore }) {
 	const [starships, setStarships] = useState([]);
+
 	const images = [
 		'/assets/starship-2.jpg',
 		'/assets/starship-1.jpg',
@@ -14,26 +15,25 @@ export default function Starships() {
 		'/assets/starship-6.jpg',
 	];
 
-	const [noOfCards, setNoOfCards] = useState(6);
-
-	function viewMore() {
-		setNoOfCards(10)
-	}
-
 	useEffect(() => {
 		try {
 			axios.get('https://swapi.co/api/starships/').then(res => {
 				setStarships(res.data.results);
+				setCount(res.data.count);
 			});
 		} catch (err) {
 			console.log(err);
 		}
-	}, []);
+	}, [setCount]);
 
 	function getID(url) {
 		let path = url.split('/');
 		let id = path[path.length - 2];
 		return `starships/${id}`;
+	}
+
+	function redirect() {
+		history.push('/starships');
 	}
 
 	return (
@@ -78,13 +78,18 @@ export default function Starships() {
 					: null}
 			</Grid>
 			<Divider hidden></Divider>
-			<Button onClick={viewMore} 
-				style={{ width: '50%', height: '3rem', display: 'block', margin: '3rem auto', border: '0.05rem solid black' }}
-				basic
-				color='black'
-			>
-				VIEW MORE
-			</Button>
+			{viewMore ? (
+				<Button
+					onClick={redirect}
+					style={{ width: '50%', height: '3rem', display: 'block', margin: '3rem auto', border: '0.05rem solid black' }}
+					basic
+					color='black'
+				>
+					VIEW MORE
+				</Button>
+			) : null}
 		</div>
 	);
 }
+
+export default withRouter(Starships);

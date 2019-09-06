@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Image, Grid, Button, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 
-export default function Characters() {
+ function Characters({ history, noOfCards, setCount, viewMore }) {
 	const [people, setPeople] = useState([]);
 	const images = [
 		'/assets/character-1.jpg',
@@ -11,17 +11,23 @@ export default function Characters() {
 		'/assets/character-3.jpg',
 		'/assets/character-4.jpg',
 	];
-	const [noOfCards, setNoOfCards] = useState(4)
+
+	const [url, setUrl] = useState('https://swapi.co/api/people/');
+	const [previousUrl, setPreviousUrl] = useState('');
+	const [nextUrl, setNextUrl] = useState('');
 
 	useEffect(() => {
 		try {
-			axios.get('https://swapi.co/api/people/').then(res => {
+			axios.get(url).then(res => {
 				setPeople(res.data.results);
+				setCount(res.data.count);
+				setPreviousUrl(res.data.previous);
+				setNextUrl(res.data.next);
 			});
 		} catch (err) {
 			console.log(err);
 		}
-	}, []);
+	}, [setCount, url]);
 
 	function getID(url) {
 		let path = url.split('/');
@@ -29,15 +35,8 @@ export default function Characters() {
 		return `people/${id}`;
 	}
 
-	function mapImage(index, gender) {
-		if (index > 3) {
-			return images[index % 4];
-		}
-		return images[index];
-	}
-
-	function viewMore() {
-		setNoOfCards(10)
+	function redirect() {
+		history.push('/characters');
 	}
 
 	return (
@@ -54,7 +53,7 @@ export default function Characters() {
 									<Grid.Column key={index}>
 										<Grid>
 											<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
-												<Image className='character-image' alt='character' src={mapImage(index, person.gender)} />
+												<Image className='character-image' alt='character' src={index > 3 ? images[index % 4] : images[index]} />
 											</Grid.Column>
 											<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
 												<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>{person.name}</h3>
@@ -83,13 +82,18 @@ export default function Characters() {
 					: null}
 			</Grid>
 			<Divider hidden></Divider>
-			<Button onClick={viewMore}
-				style={{ width: '50%', height: '3rem', display: 'block', margin: '3rem auto', border: '0.05rem solid black' }}
-				basic
-				color='black'
-			>
-				VIEW MORE
-			</Button>
+			{viewMore ? (
+				<Button
+					onClick={redirect}
+					style={{ width: '50%', height: '3rem', display: 'block', margin: '3rem auto', border: '0.05rem solid black' }}
+					basic
+					color='black'
+				>
+					VIEW MORE
+				</Button>
+			) : null}
 		</div>
 	);
 }
+
+export default withRouter(Characters);
