@@ -72,3 +72,14 @@
   font-size: 4rem;
   display: inline;
 }
+
+
+.select-gender {
+  width: 80px;
+  background-color: white;
+  color: #504e4e;
+  border-radius: 3px;
+  padding: 3px;
+  border: black solid 2px;
+  margin-left: 5px;
+}

@@ -11,7 +11,7 @@ export default function CharactersPage() {
 	return (
 		<div>
 			<Banner categories={categories}></Banner>
-			<Characters noOfCards={10} setCount={setCount}></Characters>
+			<Characters noOfCards={10} dropdown={true} setCount={setCount}></Characters>
 			<Container textAlign='center'>
 				1 to 10 of {count}
 				<Button size='mini'>

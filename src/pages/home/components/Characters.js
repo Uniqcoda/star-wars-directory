@@ -3,7 +3,9 @@ import { Link, withRouter } from 'react-router-dom';
 import { Image, Grid, Button, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 
-function Characters({ history, noOfCards, setCount, viewMore }) {
+import Dropdown from '../../characters/components/Dropdown';
+
+function Characters({ history, noOfCards, setCount, viewMore, dropdown, gender }) {
 	const [people, setPeople] = useState([]);
 	const images = [
 		'/assets/character-1.jpg',
@@ -45,6 +47,7 @@ function Characters({ history, noOfCards, setCount, viewMore }) {
 				<h2>Popular Characters</h2>
 				<hr className='sections-hr'></hr>
 			</div>
+			<div>{dropdown ? <Dropdown></Dropdown> : null}</div>
 			<Grid stackable columns={2}>
 				{people
 					? people.map((person, index) => {
