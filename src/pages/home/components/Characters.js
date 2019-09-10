@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Image, Grid, Button, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 
- function Characters({ history, noOfCards, setCount, viewMore }) {
+function Characters({ history, noOfCards, setCount, viewMore }) {
 	const [people, setPeople] = useState([]);
 	const images = [
 		'/assets/character-1.jpg',
@@ -12,22 +12,22 @@ import axios from 'axios';
 		'/assets/character-4.jpg',
 	];
 
-	const [url, setUrl] = useState('https://swapi.co/api/people/');
-	const [previousUrl, setPreviousUrl] = useState('');
-	const [nextUrl, setNextUrl] = useState('');
+	// const [url, setUrl] = useState('https://swapi.co/api/people/');
+	// const [previousUrl, setPreviousUrl] = useState('');
+	// const [nextUrl, setNextUrl] = useState('');
 
 	useEffect(() => {
 		try {
-			axios.get(url).then(res => {
+			axios.get('https://swapi.co/api/people/').then(res => {
 				setPeople(res.data.results);
 				setCount(res.data.count);
-				setPreviousUrl(res.data.previous);
-				setNextUrl(res.data.next);
+				// setPreviousUrl(res.data.previous);
+				// setNextUrl(res.data.next);
 			});
 		} catch (err) {
 			return err;
 		}
-	}, [setCount, url]);
+	}, [setCount]);
 
 	function getID(url) {
 		let path = url.split('/');
@@ -53,7 +53,11 @@ import axios from 'axios';
 									<Grid.Column key={index}>
 										<Grid>
 											<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
-												<Image className='character-image' alt='character' src={index > 3 ? images[index % 4] : images[index]} />
+												<Image
+													className='character-image'
+													alt='character'
+													src={index > 3 ? images[index % 4] : images[index]}
+												/>
 											</Grid.Column>
 											<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
 												<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>{person.name}</h3>
