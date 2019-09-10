@@ -16,7 +16,7 @@ export default function Filter() {
 	};
 	return (
 		<div gender={gender}>
-			<span>FILTER </span>
+			<span>FILTER</span>
 			<Dropdown
 				name='gender'
 				className='select-gender'
