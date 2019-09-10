@@ -3,7 +3,9 @@ import { Link, withRouter } from 'react-router-dom';
 import { Image, Grid, Button, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 
- function Characters({ history, noOfCards, setCount, viewMore }) {
+import Dropdown from '../../characters/components/Dropdown';
+
+function Characters({ history, noOfCards, setCount, viewMore, dropdown, gender }) {
 	const [people, setPeople] = useState([]);
 	const images = [
 		'/assets/character-1.jpg',
@@ -45,6 +47,7 @@ import axios from 'axios';
 				<h2>Popular Characters</h2>
 				<hr className='sections-hr'></hr>
 			</div>
+			<div>{dropdown ? <Dropdown></Dropdown> : null}</div>
 			<Grid stackable columns={2}>
 				{people
 					? people.map((person, index) => {
@@ -53,7 +56,11 @@ import axios from 'axios';
 									<Grid.Column key={index}>
 										<Grid>
 											<Grid.Column style={{ padding: '0', marginTop: '1rem' }} width={9}>
-												<Image className='character-image' alt='character' src={index > 3 ? images[index % 4] : images[index]} />
+												<Image
+													className='character-image'
+													alt='character'
+													src={index > 3 ? images[index % 4] : images[index]}
+												/>
 											</Grid.Column>
 											<Grid.Column style={{ backgroundColor: '#eeebeb', marginTop: '1rem' }} width={6}>
 												<h3 style={{ marginTop: '3rem', marginBottom: '0', fontWeight: '900' }}>{person.name}</h3>
