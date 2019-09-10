@@ -15,7 +15,7 @@ export default function Filter() {
 		setGender(event.target.innerText.toLowerCase());
 	};
 	return (
-		<div gender={gender}>
+		<div gender={gender} style={{marginBottom: '50px'}}>
 			<span>FILTER</span>
 			<Dropdown
 				name='gender'
