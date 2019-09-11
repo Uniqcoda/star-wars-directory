@@ -13,8 +13,8 @@ export default function StarshipsPage() {
 			<Banner categories={categories}></Banner>
 			<Starships noOfCards={10} setCount={setCount}></Starships>
 			<Container textAlign='center'>
-				1 to 10 of {count}{' '}
-				<Button size='mini'>
+				1 to 10 of {count}
+				<Button size='mini' style={{marginLeft: '10px'}}>
 					<Icon name='angle left'></Icon>
 				</Button>
 				<Button size='mini'>
