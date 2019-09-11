@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Body() {
+export default function Body({ character }) {
 	return (
 		<div className='ui center aligned starship-body'>
-			<h1>Luke Skywalker</h1>
+			<h1>{character.name}</h1>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
 				magna aliqua. Feugiat sed lectus vestibulum mattis. Viverra orci sagittis eu volutpat. Egestas sed tempus urna

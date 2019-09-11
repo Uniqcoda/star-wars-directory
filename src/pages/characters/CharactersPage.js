@@ -14,7 +14,7 @@ export default function CharactersPage() {
 			<Characters noOfCards={10} dropdown={true} setCount={setCount}></Characters>
 			<Container textAlign='center'>
 				1 to 10 of {count}
-				<Button size='mini'>
+				<Button size='mini' style={{marginLeft: '10px'}}>
 					<Icon name='angle left'></Icon>
 				</Button>
 				<Button size='mini'>
