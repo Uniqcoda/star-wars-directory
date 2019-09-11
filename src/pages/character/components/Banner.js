@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
 
-export default function Banner() {
+export default function Banner({character}) {
 	return (
 		<div
 			className='ui inverted vertical aligned segment'
@@ -24,7 +24,7 @@ export default function Banner() {
 			/>
 			<div className='starship-banner-name'>
 				<h1 className='banner-bracket'>[</h1>
-				<h1 style={{ display: 'inline', padding: '5px' }}>Luke Skywalker</h1>
+				<h1 style={{ display: 'inline', padding: '5px' }}>{character.name}</h1>
 				<p className='banner-bracket'>]</p>
 			</div>
 		</div>
