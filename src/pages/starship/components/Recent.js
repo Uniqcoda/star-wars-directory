@@ -17,8 +17,15 @@ export default function Recent() {
 								<Card centered fluid>
 									<Image alt='starship' style={{ height: '16.5rem' }} src='/assets/starship-4.jpg' />
 									<Card.Content>
-										<Card.Header>Daniel</Card.Header>
-										<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+										<Card.Header>Sentinel-class landing craft</Card.Header>
+										<Card.Description>
+											<p>
+												Model: <strong>Sentinel-class landing craft</strong>
+											</p>
+											<p>
+												Cargo Capacity: <strong>180000</strong>
+											</p>
+										</Card.Description>
 										<button className='ui button starship-button'>
 											Read More
 											<Icon name='arrow right' />
@@ -30,8 +37,13 @@ export default function Recent() {
 								<Card centered fluid>
 									<Image alt='starship' style={{ height: '16.5rem' }} src='/assets/starship-5.jpg' />
 									<Card.Content>
-										<Card.Header>Daniel</Card.Header>
-										<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+										<Card.Header>EF76 Nebulon-B escort frigate</Card.Header>
+										<Card.Description><p>
+														Model: <strong>EF76 Nebulon-B escort frigate</strong>
+													</p>
+													<p>
+														Cargo Capacity: <strong>6000000</strong>
+													</p></Card.Description>
 										<button className='ui button starship-button'>
 											Read More
 											<Icon name='arrow right' />
@@ -43,8 +55,13 @@ export default function Recent() {
 								<Card centered fluid>
 									<Image alt='starship' style={{ height: '16.5rem' }} src='/assets/starship-6.jpg' />
 									<Card.Content>
-										<Card.Header>Daniel</Card.Header>
-										<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+										<Card.Header>Slave 1</Card.Header>
+										<Card.Description><p>
+														Model: <strong>Firespray-31-class patrol and attack</strong>
+													</p>
+													<p>
+														Cargo Capacity: <strong>70000</strong>
+													</p></Card.Description>
 										<button className='ui button starship-button'>
 											Read More
 											<Icon name='arrow right' />
@@ -60,8 +77,13 @@ export default function Recent() {
 								<Card centered fluid>
 									<Image alt='starship' style={{ height: '16.5rem' }} src='/assets/starship-1.jpg' />
 									<Card.Content>
-										<Card.Header>Daniel</Card.Header>
-										<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+										<Card.Header>Imperial shuttle</Card.Header>
+										<Card.Description><p>
+														Model: <strong>Lambda-class T-4a shuttle</strong>
+													</p>
+													<p>
+														Cargo Capacity: <strong>80000</strong>
+													</p></Card.Description>
 										<button className='ui button starship-button'>
 											Read More
 											<Icon name='arrow right' />
@@ -73,8 +95,13 @@ export default function Recent() {
 								<Card centered fluid>
 									<Image alt='starship' style={{ height: '16.5rem' }} src='/assets/starship-2.jpg' />
 									<Card.Content>
-										<Card.Header>Daniel</Card.Header>
-										<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+										<Card.Header>TIE Advanced x1</Card.Header>
+										<Card.Description><p>
+														Model: <strong>Twin Ion Engine Advanced x1</strong>
+													</p>
+													<p>
+														Cargo Capacity: <strong>150</strong>
+													</p></Card.Description>
 										<button className='ui button starship-button'>
 											Read More
 											<Icon name='arrow right' />
@@ -86,8 +113,13 @@ export default function Recent() {
 								<Card centered fluid>
 									<Image alt='starship' style={{ height: '16.5rem' }} src='/assets/starship-3.jpg' />
 									<Card.Content>
-										<Card.Header>Daniel</Card.Header>
-										<Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+										<Card.Header>X-wing</Card.Header>
+										<Card.Description><p>
+														Model: <strong>T-65 X-wing</strong>
+													</p>
+													<p>
+														Cargo Capacity: <strong>110</strong>
+													</p></Card.Description>
 										<button className='ui button starship-button'>
 											Read More
 											<Icon name='arrow right' />
