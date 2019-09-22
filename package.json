@@ -12,6 +12,10 @@
     "semantic-ui-react": "^0.88.0",
     "styled-components": "^4.3.2"
   },
+  "engines": {
+    "npm": "6.9.0",
+    "node": "10.16.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
