@@ -59,7 +59,6 @@ export default function Search({ categories }) {
 						/>
 					</div>
 				</Form.Group>
-				
 			</Form>
 			<ul style={{ backgroundColor: 'white', listStyleType: 'none' }} className='results'>
 				{loading ? <li style={{ color: 'black' }}>Loading, please wait...</li> : null}
