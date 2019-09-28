@@ -7,6 +7,7 @@ import axios from 'axios';
 export default function Search({ categories }) {
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	const newQuery = e => {
 		setQuery(e.target.value);
@@ -16,11 +17,12 @@ export default function Search({ categories }) {
 		let path = url.split('/');
 		let id = path[path.length - 2];
 		let str = path[path.length - 3];
-		let category = str.substring(0, str.length - 1);
+		let category = str.substring(0, str.length);
 		return { url: `${category}/${id}`, category };
 	}
 
 	function search(e) {
+		setLoading(true);
 		categories.forEach(category => {
 			axios
 				.get(`https://swapi.co/api/${category}/?search=${query}`)
@@ -31,6 +33,7 @@ export default function Search({ categories }) {
 					}
 					setResults(response);
 					setQuery('');
+					setLoading(false);
 				})
 				.catch(err => err);
 		});
@@ -57,12 +60,14 @@ export default function Search({ categories }) {
 					</div>
 				</Form.Group>
 			</Form>
-			<ul style={{ backgroundColor: 'white' }} className='results'>
-				{results
+			<ul style={{ backgroundColor: 'white', listStyleType: 'none' }} className='results'>
+				{loading ? <li style={{ color: 'black' }}>Loading...</li> : null}
+				{results.length
 					? results.map((result, index) => (
 							<li key={index}>
 								<Link to={getID(result.url).url}>
-									<span style={{ color: 'black' }}>Name:</span> <em>{result.name}</em>,
+									<span style={{ color: 'black' }}>Name:</span> <em>{result.name}</em>
+									{'  '}
 									<span style={{ color: 'black' }}>Category:</span> <em>{getID(result.url).category}</em>
 								</Link>
 							</li>
